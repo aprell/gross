@@ -167,7 +167,5 @@ public:
   }
 };
 
-// template specialize stub
-void __SupportedLinearScanRATargets(GraphSchedule&);
 } // end namespace gross
 #endif

@@ -743,13 +743,6 @@ void LinearScanRegisterAllocator<T>::Allocate() {
 }
 
 namespace gross {
-void __SupportedLinearScanRATargets(GraphSchedule& Schedule) {
-  LinearScanRegisterAllocator<DLXTargetTraits> DLX(Schedule);
-  DLX.Allocate();
-  (void) DLX.GetAllocation(nullptr);
-
-  LinearScanRegisterAllocator<CompactDLXTargetTraits> DLXLite(Schedule);
-  DLXLite.Allocate();
-  (void) DLXLite.GetAllocation(nullptr);
-}
+template class LinearScanRegisterAllocator<DLXTargetTraits>;
+template class LinearScanRegisterAllocator<CompactDLXTargetTraits>;
 } // end namespace gross
